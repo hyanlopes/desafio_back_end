@@ -5,15 +5,15 @@ def read_cnab(file):
     cpf = file[19:30]
     card = file[30:42]
     hour = file[42:48]
-    story_property = file[48:62]
-    store_name = file[62:81]
+    story_property = file[48:62].strip()
+    store_name = file[62:81].strip()
     return {
-        "type": type,
-        "date": date,
-        "value": value,
-        "cpf": cpf,
-        "card": card,
-        "hour": hour,
-        "story_property": story_property,
-        "store_name": store_name,
+        "type": int(type),
+        "date": int(date),
+        "value": int(value),
+        "cpf": int(cpf),
+        "card": str(card),
+        "hour": int(hour),
+        "store_property": str(story_property),
+        "store_name": str(store_name),
     }
