@@ -13,8 +13,7 @@ def upload_file(request: Request):
         form = UploadFileForm(request.POST, request.FILES)
         file = request.FILES["file"]
         for i in file.readlines():
-
-            line = read_cnab(i)
+            line = read_cnab(i.decode("utf-8"))
             store, _ = Store.objects.get_or_create(name=line["store_name"])
             line["store_id"] = store.id
             serializer = ManagementSerializer(data=line)
