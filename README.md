@@ -85,6 +85,15 @@ Start the server
   ./manage.py runserver
 ```
 
+## Running the tests
+
+After all the installation process locally:
+
+```bash
+  ./manage.py test
+```
+Remember to look at the description of each test to understand it better. 
+
 ## Stack used
 
 **Back-end:** Python, Django-rest-framework
