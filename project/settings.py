@@ -29,7 +29,7 @@ SECRET_KEY = "django-insecure-y61^c=uw6yf1^z#@nns=s&=#=!j=+u_gw%g5yjlms!5y$dzwoz
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["desafio-back-hyan.herokuapp.com", "localhost"]
 
 
 # Application definition
@@ -138,3 +138,12 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+import dj_database_url
+
+DATABASE_URL = os.environ.get("DATABASE_URL")
+
+if DATABASE_URL:
+    db_from_env = dj_database_url.config(
+        default=DATABASE_URL, conn_max_age=500, ssl_require=True
+    )
+    DATABASES["default"].update(db_from_env)
