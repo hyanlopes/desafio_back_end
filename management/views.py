@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from project.utils import read_cnab
-from rest_framework.views import APIView, Request, Response, status
+from rest_framework.views import Request
 from store.models import Store
 
 from .forms import UploadFileForm
