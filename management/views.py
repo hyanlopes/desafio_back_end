@@ -15,7 +15,8 @@ def upload_file(request: Request):
         for i in file.readlines():
             line = read_cnab(i.decode("utf-8"))
             store, _ = Store.objects.get_or_create(name=line["store_name"])
-            line["store_id"] = store.id
+            line["store_id"] = str(store.id)
+
             serializer = ManagementSerializer(data=line)
             serializer.is_valid(raise_exception=True)
             serializer.save()

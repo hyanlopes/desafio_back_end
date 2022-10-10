@@ -35,7 +35,7 @@ def read_cnab(file):
         "type": type,
         "date": date,
         "value": int(value),
-        "cpf": int(cpf),
+        "cpf": cpf,
         "card": str(card),
         "hour": hour,
         "store_property": str(story_property),
