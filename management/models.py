@@ -8,7 +8,7 @@ class Management(models.Model):
     type = models.CharField(max_length=22)
     date = models.CharField(max_length=10)
     value = models.IntegerField()
-    cpf = models.IntegerField()
+    cpf = models.CharField(max_length=12)
     card = models.CharField(max_length=20)
     hour = models.CharField(max_length=8)
     store_property = models.CharField(max_length=30)
