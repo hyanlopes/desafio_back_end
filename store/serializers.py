@@ -26,12 +26,12 @@ class StoreListSerializer(ModelSerializer):
         for i in transactions:
 
             if (
-                i.type == "1"
-                or i.type == "4"
-                or i.type == "5"
-                or i.type == "6"
-                or i.type == "7"
-                or i.type == "8"
+                i.type == "Débito"
+                or i.type == "Crédito"
+                or i.type == "Recebimento Empréstimo"
+                or i.type == "Vendas"
+                or i.type == "Recebimento TED"
+                or i.type == "Recebimento DOC"
             ):
 
                 sub_total = sub_total + i.value
